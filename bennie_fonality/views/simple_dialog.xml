@@ -1,0 +1,25 @@
+<openerp>
+    <data>
+        <record id="simple_message" model="ir.ui.view">
+            <field name="name">Simple Message</field>
+            <field name="model">fonality.message_dialog</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group colspan="2">
+                        <h3>
+                            <field name="message" readonly="1"/>
+                        </h3>
+                    </group>
+                    <footer>
+                        <button name="perform_ok"
+                            type="object"
+                            string="OK"
+                            class="oe_highlight" />
+                        <button special="cancel"
+                            string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

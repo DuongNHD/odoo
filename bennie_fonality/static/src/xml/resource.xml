@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- This is example template for my unique field -->
+    <t t-name="FonalityPhoneText">
+        <span t-att-class="'oe_form_field '+widget.widget_class" t-att-style="widget.node.attrs.style">
+            <t t-if="!widget.get('effective_readonly')">
+                <input t-att-type="text"
+                    t-att-barcode_events="widget.options.barcode_events"
+                    t-att-id="widget.id_for_label"
+                    t-att-tabindex="widget.node.attrs.tabindex"
+                    t-att-autofocus="widget.node.attrs.autofocus"
+                    t-att-placeholder="widget.node.attrs.placeholder"
+                    t-att-maxlength="widget.field.size"
+                />
+            </t>
+            <t t-if="widget.get('effective_readonly')">
+                <button name="make_call"
+                    icon="fa-phone"
+                    type="object"
+                    groups="fonality.group_callable"
+                    class="oe_button oe_highlight btn_click2call"
+                    style="margin:0px; border:0px;"
+                    help="Make Call">
+                    <span class="oe_form_char_content"></span>
+                    <i class="fa fa-fw fa-phone o_button_icon"></i>
+                </button>
+            </t>
+        </span>
+    </t>
+</templates>

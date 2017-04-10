@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="fonality_history_form" model="ir.ui.view">
+            <field name="name">Fonality history</field>
+            <field name="model">x.call_history</field>
+            <field name="arch" type="xml">
+                <form string="Configure">
+                    <group>
+                        <field name="user" />
+                        <field name="mobile" />
+                        <field name="call_date" />
+                    </group>
+                    <group>
+
+                    </group>
+
+                </form>
+            </field>
+        </record>
+        <record id="fonality_history_tree" model="ir.ui.view">
+            <field name="name">Fonality history</field>
+            <field name="model">x.call_history</field>
+            <field name="arch" type="xml">
+                <tree string="Configure">
+                    <field name="user" />
+                    <field name="mobile" />
+                    <field name="call_date" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_call_history_tree">
+            <field name="name">Call History</field>
+            <field name="res_model">x.call_history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="fonality_history_tree" />
+        </record>
+    </data>
+</openerp>

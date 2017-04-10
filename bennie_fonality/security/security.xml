@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="category_fonality" model="ir.module.category">
+            <field name="name">Fonality</field>
+            <field name="description"></field>
+            <field name="sequence">200</field>
+        </record>
+
+        <record id="group_callable" model="res.groups">
+            <field name="name">Make Call</field>
+            <field name="category_id" ref="category_fonality"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_supervisor" model="res.groups">
+            <field name="name">Supervisor</field>
+            <field name="category_id" ref="category_fonality"/>
+            <field name="implied_ids" eval="[(4, ref('bennie_fonality.group_callable'))]"/>
+        </record>
+
+        <record id="group_admin" model="res.groups">
+            <field name="name">Admin</field>
+            <field name="category_id" ref="category_fonality"/>
+            <field name="implied_ids" eval="[(4, ref('bennie_fonality.group_supervisor'))]"/>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="fonality_api_url" model="ir.config_parameter">
+            <field name="key">fonality.api_url</field>
+            <field name="value">https://cp52-2.trixbox.com/call.cgi</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="fonaliy_user_form_view" model="ir.ui.view">
+            <field name="name">Fonaliy User Form View</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='access_rights']" position="after">
+                    <page string="Fonality" groups="bennie_fonality.group_admin">
+                        <group>
+                            <separator string="Fonality Credential" />
+                            <newline />
+
+                            <field name="fonality_username" />
+                            <field name="fonality_password" />
+                            <field name="fonality_token" readonly="1" />
+                            <div>
+                                <button name="refresh_fonality_token" 
+                                    type="object"
+                                    string="Refresh Token"
+                                    class="oe_highlight" 
+                                    style="margin-right: 20px"
+                                    />
+                                <button name="clear_fonality_token" 
+                                    type="object"
+                                    string="Clear Token"
+                                    class="oe_highlight" />
+                            </div>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record> 
+    </data>
+</openerp>
